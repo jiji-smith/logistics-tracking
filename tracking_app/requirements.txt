@@ -1,0 +1,6 @@
+streamlit
+pandas
+requests
+python-dotenv
+
+내 실제 Fedex 송장번호 : 457802105477
