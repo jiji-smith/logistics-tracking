@@ -8,7 +8,7 @@ load_dotenv()
 
 FEDEX_CLIENT_ID = os.getenv("FEDEX_CLIENT_ID")
 FEDEX_CLIENT_SECRET = os.getenv("FEDEX_CLIENT_SECRET")
-FEDEX_BASE_URL = "https://apis.fedex.com"
+FEDEX_BASE_URL = "https://apis-sandbox.fedex.com"
 TOKEN_CACHE_FILE = "fedex_token.json"
 
 def get_cached_token():
