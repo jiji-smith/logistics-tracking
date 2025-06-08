@@ -137,6 +137,15 @@ with tab1:
         df = pd.DataFrame(results)
         st.dataframe(df.drop(columns=["Logo"]))
 
+        # CSV 다운로드 기능
+        csv = df.drop(columns=["Logo"]).to_csv(index=False).encode("utf-8")
+        st.download_button(
+            label="📥 Download Tracking Results as CSV",
+            data=csv,
+            file_name="tracking_results.csv",
+            mime="text/csv"
+        )
+
 with tab2:
     st.header("International Flight Tracking")
     flight_input = st.text_input("Enter multiple flight numbers (comma-separated):")
@@ -154,4 +163,14 @@ with tab2:
                 "Arrival": res["Arrival"]
             })
 
-        st.dataframe(pd.DataFrame(flight_results))
+        df_flight = pd.DataFrame(flight_results)
+        st.dataframe(df_flight)
+
+        # CSV 다운로드 기능
+        csv_flight = df_flight.to_csv(index=False).encode("utf-8")
+        st.download_button(
+            label="📥 Download Flight Results as CSV",
+            data=csv_flight,
+            file_name="flight_results.csv",
+            mime="text/csv"
+        )
